@@ -1,10 +1,13 @@
 package models;
 
 import org.bson.types.ObjectId;
+import utils.UserIdGenerator;
+
 import java.util.Date;
 
 public class User {
     private ObjectId id;
+    private String userID;
     private String name;
     private String phoneNumber;
     private String email;
@@ -12,8 +15,10 @@ public class User {
     private Date dateRegistered;
 
     // Constructor to initialize all fields
+    //this constructor should be used  while creating a newUser
     public User(String name, String phoneNumber, String email, String passwordHash) {
         this.id = new ObjectId();           // Generate a new ObjectId
+        this.userID = UserIdGenerator.generateUserId();
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -49,4 +54,12 @@ public class User {
 
     public Date getDateRegistered() { return dateRegistered; }
     public void setDateRegistered(Date dateRegistered) { this.dateRegistered = dateRegistered; }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
 }

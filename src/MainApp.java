@@ -18,15 +18,20 @@ public class MainApp {
 
         // Create a sample User
 
-        User user = new User("Alice", "9876543210", "alice@example.com", "hashed_password");
+        User user = new User("Anshin", "6282857412", "anshinshajugmail.com", "anshin45891");
+
+
         Document userDoc = new Document("_id", user.getId())
                 .append("name", user.getName())
+                .append("userID",user.getUserID())
                 .append("phoneNumber", user.getPhoneNumber())
                 .append("email", user.getEmail())
                 .append("passwordHash", user.getPasswordHash())
                 .append("dateRegistered", user.getDateRegistered());
         usersCollection.insertOne(userDoc);
         System.out.println("Inserted User: " + user.getName());
+        System.out.println( user.getName() + "user Id : "+user.getUserID());
+
 
         // Create a Report linked to the User
         Report report = new Report(user.getId(), "Plastic", 5.5, "Central Park", "Plastic bottles near the lake");
