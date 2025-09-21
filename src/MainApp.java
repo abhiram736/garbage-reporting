@@ -18,7 +18,7 @@ public class MainApp {
 
         // Create a sample User
 
-        User user = new User("Anshin", "6282857412", "anshinshajugmail.com", "anshin45891");
+        User user = new User("hari", "0006287412", "anshinshajugmail.com", "anshin45891");
 
 
         Document userDoc = new Document("_id", user.getId())
@@ -34,7 +34,7 @@ public class MainApp {
 
 
         // Create a Report linked to the User
-        Report report = new Report(user.getId(), "metal", 10, "varikoli", "construction waste ");
+        Report report = new Report(user.getId(), "biowaste", 7, "thuravoor", "food waste ");
         Document reportDoc = new Document("_id", report.getId())
                 .append("userId", report.getUserId())
                 .append("wasteType", report.getWasteType())
