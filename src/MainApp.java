@@ -34,7 +34,7 @@ public class MainApp {
 
 
         // Create a Report linked to the User
-        Report report = new Report(user.getId(), "Plastic", 5.5, "Central Park", "Plastic bottles near the lake");
+        Report report = new Report(user.getId(), "metal", 10, "varikoli", "construction waste ");
         Document reportDoc = new Document("_id", report.getId())
                 .append("userId", report.getUserId())
                 .append("wasteType", report.getWasteType())
