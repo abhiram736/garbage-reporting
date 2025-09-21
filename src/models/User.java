@@ -11,6 +11,26 @@ public class User {
     private String passwordHash;
     private Date dateRegistered;
 
+    // Constructor to initialize all fields
+    public User(String name, String phoneNumber, String email, String passwordHash) {
+        this.id = new ObjectId();           // Generate a new ObjectId
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.dateRegistered = new Date();   // Set current date
+    }
+
+    // Optional: Constructor with custom ObjectId and date
+    public User(ObjectId id, String name, String phoneNumber, String email, String passwordHash, Date dateRegistered) {
+        this.id = id;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.dateRegistered = dateRegistered;
+    }
+
     // Getters and setters
     public ObjectId getId() { return id; }
     public void setId(ObjectId id) { this.id = id; }

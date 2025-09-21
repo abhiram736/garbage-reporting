@@ -1,11 +1,13 @@
 
 
-import com.garbage.model.User;
-import com.garbage.model.Report;
-import com.garbage.util.MongoDBUtil;
+
+import models.*;
+import utils.MongoDBUtil;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
+
+
 
 public class MainApp {
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class MainApp {
         MongoCollection<Document> reportsCollection = db.getCollection("Reports");
 
         // Create a sample User
+
         User user = new User("Alice", "9876543210", "alice@example.com", "hashed_password");
         Document userDoc = new Document("_id", user.getId())
                 .append("name", user.getName())

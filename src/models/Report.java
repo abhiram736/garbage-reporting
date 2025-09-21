@@ -13,6 +13,31 @@ public class Report {
     private Date dateSubmitted;
     private String description;
 
+    // Constructor to initialize a new report
+    public Report(ObjectId userId, String wasteType, double quantity, String location, String description) {
+        this.id = new ObjectId();          // Generate new ObjectId
+        this.userId = userId;
+        this.wasteType = wasteType;
+        this.quantity = quantity;
+        this.location = location;
+        this.status = "Pending";           // Default status
+        this.dateSubmitted = new Date();   // Current date
+        this.description = description;
+    }
+
+    // Optional: Constructor with all fields explicitly
+    public Report(ObjectId id, ObjectId userId, String wasteType, double quantity,
+                  String location, String status, Date dateSubmitted, String description) {
+        this.id = id;
+        this.userId = userId;
+        this.wasteType = wasteType;
+        this.quantity = quantity;
+        this.location = location;
+        this.status = status;
+        this.dateSubmitted = dateSubmitted;
+        this.description = description;
+    }
+
     // Getters and setters
     public ObjectId getId() { return id; }
     public void setId(ObjectId id) { this.id = id; }
