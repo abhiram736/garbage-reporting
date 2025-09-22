@@ -25,7 +25,6 @@ public class Report {
         this.description = description;
     }
 
-    // Optional: Constructor with all fields explicitly
     public Report(ObjectId id, ObjectId userId, String wasteType, double quantity,
                   String location, String status, Date dateSubmitted, String description) {
         this.id = id;
@@ -40,7 +39,6 @@ public class Report {
 
     // Getters and setters
     public ObjectId getId() { return id; }
-    public void setId(ObjectId id) { this.id = id; }
 
     public ObjectId getUserId() { return userId; }
     public void setUserId(ObjectId userId) { this.userId = userId; }
